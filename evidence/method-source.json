@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "method": "The Bridge Method",
+  "public_definition_status": "declared",
+  "declared_on": "2026-09-05",
+  "owner": "Reuben Bowlby",
+  "audience": [
+    "people connecting training to meaningful real-world tasks",
+    "coaches documenting bounded, reviewable decisions"
+  ],
+  "source": {
+    "repository": "hummbl-io/coaching",
+    "visibility": "private",
+    "ref": "ac2428bfc3c0373ab1956e4c83d6e93f0793906b",
+    "artifacts": [
+      {
+        "path": "methodology/coaching-system/canon-v0.1.md",
+        "sha256": "fbbf338d04f6053e2bf646d95c5fa3aecc0ad33dcaeb360e97e58bf4e9c54525"
+      },
+      {
+        "path": "methodology/coaching-system/human-flourishing-v0.1.md",
+        "sha256": "f4a5131aa1780aac786902f7569e76f5a83e61f56f07bf52246bdcaef91ed038"
+      },
+      {
+        "path": "methodology/coaching-system/sense-readiness-v1.0.md",
+        "sha256": "bee9f392515e31f842216a56be9e89744ebf0abb923e704ec50e2244ae16f835"
+      },
+      {
+        "path": "methodology/coaching-system/physical-task-bridge-v0.1.md",
+        "sha256": "3baa282eaf140c2359f699e6bd2fe61281332998b7360beaa7b83c1cdceeb279"
+      },
+      {
+        "path": "methodology/coaching-system/client-as-agent-v0.1.md",
+        "sha256": "4e24c959d16158e8abb12c422a20cb072ef9aa2a956124920f6c383fe7601927"
+      },
+      {
+        "path": "methodology/13d-framework.md",
+        "sha256": "014742baa571ade06ab055e77da5eeffaf670aeb3e7cb5a740fcfb3f01a00125"
+      }
+    ]
+  },
+  "public_claims": [
+    {
+      "id": "decision_loop",
+      "claim": "The governing loop is govern, observe, prepare, train, adapt, record, and review.",
+      "source_paths": ["methodology/coaching-system/canon-v0.1.md"],
+      "status": "current"
+    },
+    {
+      "id": "task_decision_review",
+      "claim": "The method connects intent and goals to observable tasks, evidence, constraints, bounded decisions, observations, and review.",
+      "source_paths": [
+        "methodology/coaching-system/canon-v0.1.md",
+        "methodology/coaching-system/physical-task-bridge-v0.1.md"
+      ],
+      "status": "current"
+    },
+    {
+      "id": "context_13d",
+      "claim": "13D is a broad context-discovery surface.",
+      "source_paths": [
+        "methodology/coaching-system/canon-v0.1.md",
+        "methodology/13d-framework.md"
+      ],
+      "status": "current"
+    },
+    {
+      "id": "sense_readiness",
+      "claim": "SENSE is a bounded readiness view covering Sleep, Exercise, Nutrition, Soreness, and Emotional State.",
+      "source_paths": [
+        "methodology/coaching-system/canon-v0.1.md",
+        "methodology/coaching-system/sense-readiness-v1.0.md"
+      ],
+      "status": "current"
+    },
+    {
+      "id": "client_agency",
+      "claim": "Client as Agent preserves autonomy, informed participation, bounded authority, escalation, and shared review.",
+      "source_paths": [
+        "methodology/coaching-system/canon-v0.1.md",
+        "methodology/coaching-system/client-as-agent-v0.1.md"
+      ],
+      "status": "current"
+    },
+    {
+      "id": "scope_boundary",
+      "claim": "The coaching system does not diagnose, treat, medically clear, or replace qualified professional judgment.",
+      "source_paths": [
+        "methodology/coaching-system/canon-v0.1.md",
+        "methodology/coaching-system/human-flourishing-v0.1.md",
+        "methodology/coaching-system/physical-task-bridge-v0.1.md"
+      ],
+      "status": "current"
+    }
+  ]
+}

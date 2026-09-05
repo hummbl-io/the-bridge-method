@@ -1,0 +1,90 @@
+name: Website
+
+on:
+  pull_request:
+    paths:
+      - "site/**"
+      - "evidence/**"
+      - "wrangler.toml"
+      - "scripts/validate_site.py"
+      - "scripts/validate_live_site.py"
+      - "tests/test_site.py"
+      - "tests/test_live_site.py"
+      - "tests/test_worker.mjs"
+      - ".github/workflows/site.yml"
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "evidence/**"
+      - "wrangler.toml"
+      - "scripts/validate_site.py"
+      - "scripts/validate_live_site.py"
+      - "tests/test_site.py"
+      - "tests/test_live_site.py"
+      - "tests/test_worker.mjs"
+      - ".github/workflows/site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate thebridgemethod.net
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Python
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+
+      - name: Install test dependency
+        run: python -m pip install pytest
+
+      - name: Validate the public surface
+        run: |
+          python scripts/validate_site.py
+          python -m pytest tests -q
+          node --test tests/test_worker.mjs
+
+  deploy:
+    name: Deploy thebridgemethod.net
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+
+      - name: Setup Python
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
+        with:
+          python-version: "3.12"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site/ --project-name=the-bridge-method --branch=main
+
+      - name: Audit the deployed surface
+        run: python scripts/validate_live_site.py
