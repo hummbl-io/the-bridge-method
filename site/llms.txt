@@ -1,0 +1,15 @@
+# The Bridge Method
+
+> The Bridge Method is Reuben Bowlby's public name for his documented coaching system.
+
+Canonical URL: https://thebridgemethod.net/
+Method owner: https://reubenbowlby.com/
+Governed system: https://hummbl.io/
+Company home: https://hummbl.house/
+Heritage identity: https://rpbx.net/
+
+The method moves from intention to observable task, present-state evidence,
+bounded action, observation, and shared review. Its current canon uses the loop
+govern → observe → prepare → train → adapt → record → review. It does not
+diagnose, treat, medically clear, automatically prescribe exercise, score a
+person's worth, or guarantee health or performance outcomes.

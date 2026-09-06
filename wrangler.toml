@@ -1,0 +1,6 @@
+# Cloudflare Pages configuration for thebridgemethod.net.
+# The apex and www custom domains belong to the the-bridge-method Pages project.
+
+name = "the-bridge-method"
+pages_build_output_dir = "./site"
+compatibility_date = "2026-09-05"
