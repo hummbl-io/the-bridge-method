@@ -93,6 +93,22 @@ footer a:focus-visible {
   text-decoration: none;
 }
 
+.wordmark::before {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  border: 1.5px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-size: 0.85em;
+  font-weight: 800;
+  letter-spacing: 0;
+  content: "B";
+}
+
 .wordmark i {
   padding-left: 0.48rem;
   border-left: 1px solid var(--green);
@@ -736,6 +752,11 @@ footer {
 }
 
 .wordmark-footer i {
+  color: var(--spring);
+}
+
+.wordmark-footer::before {
+  border-color: var(--spring);
   color: var(--spring);
 }
 
