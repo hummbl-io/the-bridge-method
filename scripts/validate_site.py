@@ -433,11 +433,11 @@ def validate_site(site_root: Path = SITE_ROOT) -> list[str]:
         failures.append("404.html must not declare a canonical URL")
     if 'name="robots" content="noindex, follow"' not in not_found_html:
         failures.append("404.html must declare noindex, follow")
-    if not_found_parser.stylesheets != ["/fonts.css?v=1", "/styles.css?v=1"]:
+    if not_found_parser.stylesheets != ["/fonts.css?v=1", "/styles.css?v=2"]:
         failures.append("404.html must use the versioned global site URLs")
     if "mailto:" in (html + not_found_html).casefold():
         failures.append("mailto links are forbidden")
-    if parser.stylesheets != ["/fonts.css?v=1", "/styles.css?v=1"]:
+    if parser.stylesheets != ["/fonts.css?v=1", "/styles.css?v=2"]:
         failures.append("stylesheets must use the versioned global site URLs")
     if not any(urlparse(href).hostname == "hummbl.io" for href in parser.hrefs):
         failures.append("site must link to hummbl.io")
