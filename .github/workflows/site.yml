@@ -32,7 +32,7 @@ permissions:
 jobs:
   validate:
     name: Validate thebridgemethod.net
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux]
     timeout-minutes: 5
     steps:
       - name: Checkout code
