@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "renderer": {
+    "tool": "Playwright Chromium",
+    "playwright": "1.62.0",
+    "browser": "153.0.8010.53"
+  },
+  "sources": [
+    {
+      "path": "presentation/card.html",
+      "sha256": "de0af09822283c2c340970ce8584eae54fec365a217a9c9620278d71a768bbfb"
+    },
+    {
+      "path": "presentation/config.json",
+      "sha256": "c45b7e1bca09007eca04119130c87cb5e9faebb9f8c8194f555aa6a741fb3562"
+    },
+    {
+      "path": "scripts/render_presentation.py",
+      "sha256": "bfe96ce480080df9cdf1fa9ab7e1250fdfb11ddc145130db0ed0ac53c9f2e7d4"
+    },
+    {
+      "path": "site/favicon-bridge-d1573dd1a5af.svg",
+      "sha256": "d1573dd1a5af3777e15a67dd6b5ecad4610fe68f63a41d95af62dde537f113a5"
+    },
+    {
+      "path": "site/fonts/inter-latin-variable.woff2",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "site/fonts/crimson-pro-latin-variable.woff2",
+      "sha256": "20ce4189b9e41b3439a2a36dd63deff44b6d91182532202cb96b65521b4a3c23"
+    },
+    {
+      "path": "site/fonts/crimson-pro-latin-italic-400.woff2",
+      "sha256": "1fac78d865686e4e1236e5e599f02c8afe05dd59d04344553cc45a160d53ac63"
+    },
+    {
+      "path": "site/fonts/jetbrains-mono-latin-variable.woff2",
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "social",
+      "path": "site/social-bridge-56d23c0b80a4.png",
+      "sha256": "56d23c0b80a423536b4d97815f47692a2714bdb5a2fcc0f78e61f97550b81c92",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "kind": "touch",
+      "path": "site/apple-touch-icon-8aba0aa9e2bb.png",
+      "sha256": "8aba0aa9e2bb4bc96016973bda476b89ee256b9f36a21ca8fe093ef8217e000f",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "kind": "favicon",
+      "path": "site/favicon-bridge-3c832bab8d39.png",
+      "sha256": "3c832bab8d39a15fda659a72e88ec4e0a7442e64c745613edcc7870b0ea80eaa",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "kind": "icon192",
+      "path": "site/icon-bridge-49892708a4a8.png",
+      "sha256": "49892708a4a8466819b097bbda0f2f1fb7118ed3ea0b4b196ffbc0eeae8c48d8",
+      "width": 192,
+      "height": 192
+    }
+  ]
+}

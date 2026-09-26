@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Bridge Method social card source</title>
+    <style>
+      @font-face {
+        font-family: Inter;
+        src: url("../site/fonts/inter-latin-variable.woff2");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Crimson Pro";
+        src: url("../site/fonts/crimson-pro-latin-variable.woff2");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Crimson Pro";
+        src: url("../site/fonts/crimson-pro-latin-italic-400.woff2");
+        font-style: italic;
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("../site/fonts/jetbrains-mono-latin-variable.woff2");
+        font-weight: 100 800;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      .card {
+        width: 1200px;
+        height: 630px;
+        padding: 54px 64px;
+        position: relative;
+        overflow: hidden;
+        background: #f7f8f4;
+        color: #102f24;
+        font-family: Inter, sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      header img {
+        width: 48px;
+        height: 48px;
+      }
+      .wordmark {
+        font-size: 22px;
+        font-weight: 650;
+      }
+      .wordmark em {
+        font-family: "Crimson Pro", serif;
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .status {
+        margin-left: auto;
+        font:
+          14px "JetBrains Mono",
+          monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        padding: 12px 15px;
+        border: 1px solid currentColor;
+      }
+      h1 {
+        position: relative;
+        margin: 63px 0 22px;
+        font:
+          560 80px/0.97 "Crimson Pro",
+          Georgia,
+          serif;
+        letter-spacing: -0.035em;
+        max-width: 790px;
+      }
+      h1 em {
+        font-weight: 400;
+        color: #26754b;
+      }
+      .description {
+        font-size: 23px;
+        line-height: 1.55;
+        position: relative;
+        max-width: 750px;
+      }
+      footer {
+        position: absolute;
+        left: 64px;
+        right: 64px;
+        bottom: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #829b85;
+        padding-top: 24px;
+        font:
+          14px "JetBrains Mono",
+          monospace;
+      }
+      .domain {
+        font-size: 18px;
+      }
+      .figure {
+        position: absolute;
+        right: 48px;
+        top: 190px;
+        width: 270px;
+        height: 280px;
+        color: #52635b;
+      }
+      .figure path,
+      .figure rect,
+      .figure circle {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.6;
+      }
+      .figure .accent {
+        stroke: #26754b;
+        stroke-width: 3;
+      }
+      .figure text {
+        font:
+          14px "JetBrains Mono",
+          monospace;
+        fill: currentColor;
+        letter-spacing: 0.15em;
+      }
+      .bridge .figure {
+        top: 188px;
+      }
+      .bridge .wordmark {
+        font-size: 24px;
+      }
+      .kernel .figure rect {
+        stroke: #765b76;
+      }
+      .kernel .figure .accent {
+        stroke: #765b76;
+        stroke-dasharray: 4 4;
+      }
+      .kernel .status {
+        color: #765b76;
+      }
+      .kernel h1 {
+        font-size: 78px;
+      }
+      .rpbx {
+        background: #173b2d;
+        color: #f7f8f4;
+      }
+      .rpbx h1 {
+        font-size: 93px;
+      }
+      .rpbx h1 em {
+        color: #8bc69d;
+      }
+      .rpbx .figure {
+        color: #526f5c;
+      }
+      .rpbx .figure .accent {
+        stroke: #8bc69d;
+        stroke-width: 4;
+      }
+      .rpbx .wordmark {
+        font-size: 30px;
+      }
+      .rpbx .wordmark em {
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card bridge">
+      <header>
+        <img src="../site/favicon-bridge-d1573dd1a5af.svg" alt="" /><span
+          class="wordmark"
+          >The Bridge <em>Method</em></span
+        ><span class="status">Human coaching</span>
+      </header>
+      <h1>Train for the life<br /><em>on the other side.</em></h1>
+      <p class="description">
+        A human coaching method connecting<br />what matters to what happens
+        next.
+      </p>
+      <svg class="figure" viewBox="0 0 270 280" aria-hidden="true">
+        <path
+          d="M15 178h245M30 178c24-139 185-139 211 0M54 115v63m53-109v109m58-109v109m53-63v63"
+        />
+        <path class="accent" d="M15 205c40-25 63 25 105 0s65 25 130 0" />
+      </svg>
+      <footer>
+        <span class="domain">thebridgemethod.net</span
+        ><span>Observe / Act / Reflect</span>
+      </footer>
+    </article>
+  </body>
+</html>

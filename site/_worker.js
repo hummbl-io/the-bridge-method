@@ -1,3 +1,10 @@
+const PRESENTATION_ASSET_PATHS = new Set([
+  "/social-bridge-56d23c0b80a4.png",
+  "/apple-touch-icon-8aba0aa9e2bb.png",
+  "/favicon-bridge-3c832bab8d39.png",
+  "/icon-bridge-49892708a4a8.png",
+]);
+
 const CANONICAL_HOST = "thebridgemethod.net";
 const ALIAS_HOSTS = new Set([
   "www.thebridgemethod.net",
@@ -45,6 +52,21 @@ export default {
         },
       });
     }
-    return protectHtml(await env.ASSETS.fetch(request));
+    const response = await env.ASSETS.fetch(request);
+    if (response.status === 200 && PRESENTATION_ASSET_PATHS.has(url.pathname)) {
+      const headers = new Headers(response.headers);
+      headers.set(
+        "Cache-Control",
+        "public, max-age=31536000, immutable, no-transform",
+      );
+      headers.set("X-Content-Type-Options", "nosniff");
+      headers.delete("Content-Disposition");
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
+    return protectHtml(response);
   },
 };
