@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import test from "node:test";
 
@@ -67,4 +68,50 @@ test("HTML fallbacks receive no-transform before leaving the Worker", async () =
   assert.equal(response.status, 404);
   assert.equal(response.headers.get("cache-control"), "no-store, no-transform");
   assert.equal(await response.text(), "missing");
+});
+
+test("reviewed PNG assets preserve bytes and immutable caching", async () => {
+  const manifest = JSON.parse(
+    readFileSync(new URL("../presentation/manifest.json", import.meta.url)),
+  );
+  const config = JSON.parse(
+    readFileSync(new URL("../presentation/config.json", import.meta.url)),
+  );
+  for (const asset of manifest.assets) {
+    const path = asset.path.replace(/^site/, "");
+    const bytes = readFileSync(new URL(`../${asset.path}`, import.meta.url));
+    for (const status of [200, 404]) {
+      const response = await worker.fetch(
+        new Request(`https://${config.host}${path}`),
+        {
+          ASSETS: {
+            async fetch() {
+              return new Response(status === 200 ? bytes : "missing", {
+                status,
+                headers: {
+                  "Content-Type": status === 200 ? "image/png" : "text/html",
+                  "Cache-Control":
+                    status === 200 ? "upstream" : "no-store, no-transform",
+                },
+              });
+            },
+          },
+        },
+      );
+      assert.equal(response.status, status);
+      if (status === 200) {
+        assert.equal(response.headers.get("Content-Type"), "image/png");
+        assert.equal(
+          response.headers.get("Cache-Control"),
+          "public, max-age=31536000, immutable, no-transform",
+        );
+        assert.deepEqual(Buffer.from(await response.arrayBuffer()), bytes);
+      } else {
+        assert.equal(
+          response.headers.get("Cache-Control"),
+          "no-store, no-transform",
+        );
+      }
+    }
+  }
 });

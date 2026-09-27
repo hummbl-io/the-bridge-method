@@ -8,6 +8,10 @@ on:
       - "wrangler.toml"
       - "scripts/validate_site.py"
       - "scripts/validate_live_site.py"
+      - "scripts/validate_presentation.py"
+      - "scripts/render_presentation.py"
+      - "presentation/**"
+      - "tests/test_presentation.py"
       - "tests/test_site.py"
       - "tests/test_live_site.py"
       - "tests/test_worker.mjs"
@@ -20,6 +24,10 @@ on:
       - "wrangler.toml"
       - "scripts/validate_site.py"
       - "scripts/validate_live_site.py"
+      - "scripts/validate_presentation.py"
+      - "scripts/render_presentation.py"
+      - "presentation/**"
+      - "tests/test_presentation.py"
       - "tests/test_site.py"
       - "tests/test_live_site.py"
       - "tests/test_worker.mjs"
@@ -91,4 +99,6 @@ jobs:
           command: pages deploy site/ --project-name=the-bridge-method --branch=main
 
       - name: Audit the deployed surface
-        run: python scripts/validate_live_site.py
+        run: |
+          python scripts/validate_live_site.py
+          python scripts/validate_presentation.py --live

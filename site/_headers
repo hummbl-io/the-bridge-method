@@ -30,3 +30,15 @@
 
 /llms.txt
   Cache-Control: public, max-age=3600
+
+/social-bridge-56d23c0b80a4.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon-8aba0aa9e2bb.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon-bridge-3c832bab8d39.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/icon-bridge-49892708a4a8.png
+  Cache-Control: public, max-age=31536000, immutable

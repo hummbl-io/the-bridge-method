@@ -11,6 +11,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 
+from validate_presentation import presentation_cache_rules, validate_presentation
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_ROOT = REPO_ROOT / "site"
 METHOD_SOURCE_RECEIPT = REPO_ROOT / "evidence" / "method-source.json"
@@ -231,7 +233,7 @@ class SiteParser(HTMLParser):
             href = str(attributes["href"])
             if "stylesheet" in rel:
                 self.stylesheets.append(href)
-            if "icon" in rel:
+            if "icon" in rel and attributes.get("type") == "image/svg+xml":
                 self.icons.append(href)
             if "canonical" in rel:
                 self.canonicals.append(href)
@@ -575,7 +577,7 @@ def validate_site(site_root: Path = SITE_ROOT) -> list[str]:
         '"www.thebridgemethod.net"',
         '"the-bridge-method.pages.dev"',
         "ALIAS_HOSTS.has(url.hostname)",
-        "protectHtml(await env.ASSETS.fetch(request))",
+        "protectHtml(response)",
         "status: 301",
     ):
         if required not in worker:
@@ -586,7 +588,11 @@ def validate_site(site_root: Path = SITE_ROOT) -> list[str]:
     sitemap = (site_root / "sitemap.xml").read_text(encoding="utf-8")
     if CANONICAL_URL not in sitemap:
         failures.append("sitemap must contain the canonical URL")
+    failures.extend(validate_presentation(site_root))
     return failures
+
+
+REQUIRED_CACHE_RULES.update(presentation_cache_rules())
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
