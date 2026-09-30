@@ -1,3 +1,22 @@
+# robots.txt for thebridgemethod.net
+# GEO stance: allow search and AI-answer retrieval/citation; disallow training.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 User-agent: *
 Allow: /
+
+# AI retrieval agents (drive live citations)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
 Sitemap: https://thebridgemethod.net/sitemap.xml

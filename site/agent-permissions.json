@@ -1,0 +1,19 @@
+{
+  "site": "https://thebridgemethod.net",
+  "version": "1.0",
+  "updated": "2026-09-30",
+  "contact": "agents@hummbl.io",
+  "discovery": {
+    "llms_txt": "https://thebridgemethod.net/llms.txt",
+    "sitemap": "https://thebridgemethod.net/sitemap.xml"
+  },
+  "crawling": {
+    "retrieval_and_citation": "allowed",
+    "model_training": "disallowed",
+    "robots": "https://thebridgemethod.net/robots.txt"
+  },
+  "notes": [
+    "Public pages require no authentication.",
+    "Public portal for The Bridge Method coaching system; not a clinical or regulated service."
+  ]
+}
