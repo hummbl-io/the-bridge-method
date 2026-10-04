@@ -22,4 +22,4 @@ person's worth, or guarantee health or performance outcomes.
 - [agent-permissions.json](https://thebridgemethod.net/agent-permissions.json)
 - [sitemap.xml](https://thebridgemethod.net/sitemap.xml)
 
-Token estimate (chars/4): this file ~150 tokens.
+Token estimate (chars/4): this file ~239 tokens.

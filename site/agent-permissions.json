@@ -14,6 +14,7 @@
   },
   "notes": [
     "Public pages require no authentication.",
-    "Public portal for The Bridge Method coaching system; not a clinical or regulated service."
+    "Public portal for The Bridge Method coaching system; not a clinical or regulated service.",
+    "Publisher-defined discovery metadata; these preferences are not an authentication or access-control mechanism. Crawler compliance is not guaranteed."
   ]
 }
