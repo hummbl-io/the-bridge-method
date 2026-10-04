@@ -2,6 +2,14 @@
 
 > The Bridge Method is Reuben Bowlby's public name for his documented coaching system.
 
+The method moves from intention to observable task, present-state evidence,
+bounded action, observation, and shared review. Its current canon uses the loop
+govern → observe → prepare → train → adapt → record → review. It does not
+diagnose, treat, medically clear, automatically prescribe exercise, score a
+person's worth, or guarantee health or performance outcomes.
+
+Token estimate (chars/4): this file ~239 tokens.
+
 ## Links
 
 - [Canonical](https://thebridgemethod.net/)
@@ -10,16 +18,8 @@
 - [Company home](https://hummbl.house/)
 - [Heritage identity](https://rpbx.net/)
 
-The method moves from intention to observable task, present-state evidence,
-bounded action, observation, and shared review. Its current canon uses the loop
-govern → observe → prepare → train → adapt → record → review. It does not
-diagnose, treat, medically clear, automatically prescribe exercise, score a
-person's worth, or guarantee health or performance outcomes.
-
 ## Agent interfaces
 
 - [llms.txt](https://thebridgemethod.net/llms.txt)
 - [agent-permissions.json](https://thebridgemethod.net/agent-permissions.json)
 - [sitemap.xml](https://thebridgemethod.net/sitemap.xml)
-
-Token estimate (chars/4): this file ~239 tokens.
