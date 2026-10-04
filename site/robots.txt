@@ -1,3 +1,15 @@
+# robots.txt for thebridgemethod.net
+# Publisher preferences: search and retrieval allowed; training declined.
+# Content Signals depend on crawler support and do not enforce access controls.
+# https://contentsignals.org/
 User-agent: *
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+
 Sitemap: https://thebridgemethod.net/sitemap.xml
