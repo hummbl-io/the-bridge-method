@@ -7,3 +7,8 @@ node_modules/
 test-results/
 playwright-report/
 *.log
+
+# HUMMBL fleet
+_internal/
+_between/
+_external/
