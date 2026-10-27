@@ -727,6 +727,18 @@ h3 {
   margin: 0 auto;
 }
 
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.3rem;
+}
+
+.closing-actions .button-light {
+  margin-top: 0;
+}
+
 .button-light {
   margin-top: 2.3rem;
   background: var(--white);
