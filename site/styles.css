@@ -424,7 +424,7 @@ h3 {
 .canon-loop {
   color: var(--forest);
   font-family: var(--mono);
-  font-size: 0.73rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.8;
 }
@@ -812,7 +812,7 @@ footer nav a:hover {
 
 .error-code {
   color: var(--green);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -865,10 +865,6 @@ footer nav a:hover {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;
-  }
-
-  h1 br {
-    display: none;
   }
 
   .hero {
